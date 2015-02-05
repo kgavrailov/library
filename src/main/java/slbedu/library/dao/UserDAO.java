@@ -2,17 +2,20 @@ package slbedu.library.dao;
 
 import java.security.MessageDigest;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import slbedu.library.model.User;
 
+@ApplicationScoped
 public class UserDAO {
 
+    @Inject
     private EntityManager em;
 
-    public UserDAO(EntityManager em) {
-        this.em = em;
+    public UserDAO() {
     }
 
     public void addUser(User user) {

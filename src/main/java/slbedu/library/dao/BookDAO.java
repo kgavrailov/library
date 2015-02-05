@@ -2,6 +2,8 @@ package slbedu.library.dao;
 
 import java.util.Collection;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.NoResultException;
@@ -10,11 +12,12 @@ import javax.persistence.TypedQuery;
 import slbedu.library.model.Book;
 import slbedu.library.model.User;
 
+@ApplicationScoped
 public class BookDAO {
+    @Inject
     private EntityManager em;
 
-    public BookDAO(EntityManager em) {
-        this.em = em;
+    public BookDAO() {
     }
 
     public void addBook(Book book) {
